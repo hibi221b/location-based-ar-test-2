@@ -6,9 +6,6 @@ window.onload = () => {
         longitude = position.coords.longitude;
     })
 
-    latitude -= 0.0000261
-    longitude += 0.0000114
-
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
 
