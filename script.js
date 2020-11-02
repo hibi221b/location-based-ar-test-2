@@ -9,7 +9,7 @@ window.onload = () => {
 
     if(window.confirm("現在地を取得しますか?")) {
         navigator.geolocation.getCurrentPosition((position) => {
-            latitude = position.coords.latitude;
+            latitude = position.coords.latitude + 0.00004;
             longitude = position.coords.longitude;
         })
     } else {
