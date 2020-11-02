@@ -1,21 +1,13 @@
 window.onload = () => {
-
-    if(!navigator.geolocation) {
-        window.alert("現在地を取得することができません")
-        return;
-    }
-
     let latitude, longitude;
 
-    if(window.confirm("現在地を取得しますか?")) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            latitude = position.coords.latitude;
-            longitude = position.coords.longitude;
-        })
-    } else {
-        window.alert("ブラウザを閉じます。");
-        window.close();
-    }
+    navigator.geolocation.getCurrentPosition((position) => {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+    })
+
+    latitude -= 0.0000261
+    longitude += 0.0000114
 
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
